@@ -55,11 +55,12 @@
 	                <td class="col_8">№</td>
 	                <td class="col_8">ПІБ</td>
 	                <td class="col_8">Контактний <br> телефон</td>
+	                <td class="col_8">Адреса</td>
 	                <td class="col_15">Модель</td>
 	                <td class="col_15">Виробник</td>
 	                <td class="col_15">Майстер</td>
-	                <td class="col_15">Місце</td>
 	                <td class="col_15">Інше</td>
+	                <td class="col_8">Відд.</td>
 	            </tr>
 		        <form id="myForm1" method="POST" action="#">
 		           
@@ -90,6 +91,9 @@
 		                    {{$obj->tel}}
 		                </td>
 		                <td>
+		                    {{$obj->adress}}
+		                </td>
+		                <td>
 		                    {{$obj->model}}
 		                </td>
 		                <td>
@@ -99,10 +103,10 @@
 		                    {{$obj->maister}}
 		                </td>
 		                <td>
-		                    {{$obj->misze}}
+		                    {{$obj->other}}
 		                </td>
 		                <td>
-		                    {{$obj->other}}
+		                    {{$obj->misze}}
 		                </td>
 		            </tr> 
 		           @endforeach   

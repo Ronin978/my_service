@@ -21,10 +21,10 @@
 	                <td class="col_8">№</td>
 	                <td class="col_8">ПІБ</td>
 	                <td class="col_8">Контактний <br> телефон</td>
+	                <td class="col_8">Адреса</td>
 	                <td class="col_15">Модель</td>
 	                <td class="col_15">Виробник</td>
 	                <td class="col_15">Майстер</td>
-	                <td class="col_15">Місце</td>
 	                <td class="col_15">Інше</td>
 	            </tr>
 	           @foreach($objects as $key=>$obj)
@@ -51,6 +51,9 @@
 	                	<textarea name="tel" rows="1" data="elastic">{{$obj->tel}}</textarea>	
 	                </td>
 	                <td>
+	                	<textarea name="adress" rows="1" data="elastic">{{$obj->adress}}</textarea>	
+	                </td>
+	                <td>
 	                	<textarea name="model" rows="1" data="elastic">{{$obj->model}}</textarea>	
 	                </td>
 	                <td>
@@ -60,15 +63,15 @@
 	                	<textarea name="maister" rows="1" data="elastic">{{$obj->maister}}</textarea>	
 	                </td>
 	                <td>
-	                	<textarea name="misze" rows="1" data="elastic">{{$obj->misze}}</textarea>	
-	                </td>
-	                <td>
 	                	<textarea name="other" rows="1" data="elastic">{{$obj->other}}</textarea>	
 	                </td>
 	            </tr>  
 	           @endforeach             
 	        </table>
 	        <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
+	        <input type="hidden" name="users" value="{{\Auth::user()->name}}"/> 
+
+
 	        <div class="panel" align="center">   
             <div class="btn-group" onclick="document.getElementById('firstForm').submit();">
                 <span>

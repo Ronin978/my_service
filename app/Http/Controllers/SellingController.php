@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Selling;
+use Illuminate\Support\Facades\Auth;
 
 class SellingController extends Controller
 {
@@ -27,9 +28,6 @@ class SellingController extends Controller
 
     public function update(Request $request, $id)
     {
-    	$post = $request->all();
-        //$id=$post['id'];
-        //dd($post);
         $sell=Selling::find($id);
         $sell->update($request->all());
         $sell->save();
@@ -41,6 +39,10 @@ class SellingController extends Controller
     {
         $post = $request->all();
         $flash=' ';
+        
+        $report['misze'] = Auth::user()->misze;
+        $report['users'] = Auth::user()->name;
+
         for ($i=0; $i < (count($post)-1)/8 ; $i++) 
         {   
             $flash=$flash.$post["name$i"];

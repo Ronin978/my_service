@@ -28,9 +28,6 @@ class RepairController extends Controller
 
     public function update(Request $request, $id)
     {
-    	$post = $request->all();
-        //$id=$post['id'];
-        //dd($post);
         $sell=Repair::find($id);
         $sell->update($request->all());
         $sell->save();

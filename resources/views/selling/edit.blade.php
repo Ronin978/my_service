@@ -57,6 +57,8 @@
 	           @endforeach             
 	        </table>
 	        <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
+	        <input type="hidden" name="users" value="{{\Auth::user()->name}}"/>
+	        
 	        <div class="panel" align="center">   
             <div class="btn-group" onclick="document.getElementById('firstForm').submit();">
                 <span>
