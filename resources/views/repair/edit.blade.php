@@ -9,7 +9,7 @@
 <div class="container">
 <div class="row">
 	<div class="12u">
-		<section align="center"><h2>Редагувати</h2></section>
+		<section align="center"><h2>Редагувати ремонт</h2></section>
 		<form id="firstForm" method="POST" action="{{action('RepairController@update', ['id'=>$myid])}}"> 
 		<section id="pagePrint">
 			<table id="table4">

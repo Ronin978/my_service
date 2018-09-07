@@ -27,8 +27,8 @@
 						<div class="btn-group" onclick="sb('{{action('RepairController@delete')}}')">
 							<span>Видалити</span>
 						</div>
-						<div class="btn-group" onclick="sb('{{action('RepairController@check')}}')">
-							<span>Видати квитанцію</span>
+						<div class="btn-group" onclick="sb('{{action('RepairController@check1')}}')">
+							<span>Видати прилад</span>
 						</div>
 					</td>
 				</tr>

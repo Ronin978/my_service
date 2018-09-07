@@ -9,7 +9,7 @@
 
         <!-- Feature #1 -->
         <section>      
-            <a href="{{action('RepairController@show')}}" class="bordered-feature-image"><img src="{{asset('images/price.png')}}" alt="" /></a>
+            <a href="{{action('RepairController@createStore')}}" class="bordered-feature-image"><img src="{{asset('images/price.png')}}" alt="" /></a>
             <p>
                 Видати квитанцію
             </p>
@@ -55,7 +55,7 @@
 
         <!-- Feature #1 -->
         <section> 
-            <a href="{{action('SellingController@show')}}" class="bordered-feature-image"><img src="{{asset('images/prilad.png')}}" alt="" /></a>
+            <a href="{{action('RepairController@show')}}" class="bordered-feature-image"><img src="{{asset('images/prilad.png')}}" alt="" /></a>
             <p>
                 Видати прилад
             </p>

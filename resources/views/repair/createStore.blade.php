@@ -9,7 +9,7 @@
 <div class="12u">   
 @include('flash::message')     
 <section>  
-    <form id="firstForm" method="POST" action="{{action('RepairController@store')}}">   
+    <form id="firstForm" method="POST" action="{{action('RepairController@store1')}}">   
         <p align="center">Додати техніку в ремонт</p>       
         <table id="table4">
             <tr id="firstTr">
@@ -31,48 +31,42 @@
                     <div>1</div>
                 </td>
                 <td>
-                    <textarea name="date0" rows="1" data="elastic"></textarea>
+                    <textarea name="date" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="type0" rows="1" data="elastic"></textarea>
+                    <textarea name="type" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="status0" rows="1" data="elastic"></textarea>
+                    <textarea name="status" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="no0" rows="1" data="elastic"></textarea>
+                    <textarea name="no" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="pib0" rows="1" data="elastic"></textarea>
+                    <textarea name="pib" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="tel0" rows="1" data="elastic"></textarea>
+                    <textarea name="tel" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="adress0" rows="1" data="elastic"></textarea>
+                    <textarea name="adress" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="model0" rows="1" data="elastic"></textarea>
+                    <textarea name="model" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="prod0" rows="1" data="elastic"></textarea>
+                    <textarea name="prod" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="maister0" rows="1" data="elastic"></textarea>
+                    <textarea name="maister" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
-                    <textarea name="other0" rows="1" data="elastic"></textarea>
+                    <textarea name="other" rows="1" data="elastic"></textarea>
                 </td>
             </tr>              
         </table>
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
         
-        <div class="btn-group small-btn-group" onclick="AddLine1()" align="center">
-            <span>
-                <img src="{{asset('css/ico/add.png')}}">
-                Додати рядок   
-            </span>
-        </div><br>
         <div class="panel" align="center">   
             <div class="btn-group" onclick="document.getElementById('firstForm').submit();">
                 <span>

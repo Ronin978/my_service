@@ -24,23 +24,7 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
-     <script language="javascript">
-    function CallPrint(strid) 
-    { 
-        var prtContent = document.getElementById(strid); 
-        var WinPrint = window.open('', '', 'left=50,top=50,width=screen.availWidth, height=screen.availHeight,toolbar=0,scrollbars=1,status=0, onload=1'); 
-        
-        WinPrint.document.write('<html><head><title></title><link rel="stylesheet" type="text/css" href="{{asset("css/admin.css")}}"><link rel="stylesheet" type="text/css" href="{{asset("css/main.css")}}"><link rel="stylesheet" type="text/css" href="{{asset("css/app.css")}}"><script src="{{asset("js/jquery.min.js")}}"><\/script></head><body>'); 
-        WinPrint.document.write(prtContent.innerHTML); 
-        WinPrint.document.write("<script src='{{ asset('js/app.js') }}'><\/script><script src='{{asset('js/skel.min.js')}}'><\/script><script src='{{asset('js/skel-viewport.min.js')}}'><\/script><script src='{{asset('js/util.js')}}'><\/script><script src='{{asset('js/main.js')}}'><\/script><script src='{{asset('js/myFunction.js')}}'><\/script><script>window.onload=function(){ window.print(); window.close(); }<\/script></body></html>"); 
-
-        WinPrint.document.close(); 
-        WinPrint.focus(); 
-      //  WinPrint.print(); 
-      //  WinPrint.close();
-         
-    }
-    </script>
+    
 
     <script>
     window.onload=function(){
@@ -155,7 +139,7 @@
 
         <!-- Feature #1 -->
         <section>      
-            <a href="{{action('RepairController@show')}}" class="bordered-feature-image"><img src="{{asset('images/price.png')}}" alt="" /></a>
+            <a href="{{action('RepairController@createStore')}}" class="bordered-feature-image"><img src="{{asset('images/price.png')}}" alt="" /></a>
             <p>
                 Видати квитанцію
             </p>
@@ -201,7 +185,7 @@
 
         <!-- Feature #1 -->
         <section> 
-            <a href="{{action('SellingController@show')}}" class="bordered-feature-image"><img src="{{asset('images/prilad.png')}}" alt="" /></a>
+            <a href="{{action('RepairController@show')}}" class="bordered-feature-image"><img src="{{asset('images/prilad.png')}}" alt="" /></a>
             <p>
                 Видати прилад
             </p>
@@ -232,6 +216,7 @@
  @yield('content')
                      
 <!-- Footer -->
+<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
     <div id="footer-wrapper">
         <footer id="footer" class="container">
             <div class="row">
@@ -257,7 +242,7 @@
 
                     <!-- Blurb -->
                         <section>
-                            <h2>Сайт знаходиться в тестовому режимі.</h2>
+                            <h2>Сайт знаходиться в тестовому режимі. Оновлено 07.09.2018р.</h2>
                             <p>
                                 Про всі помилки повідомляти розробника. Для ефективного усунення несправностей зробити скріншот та описати які дії призвели до несправності.
                             </p>
@@ -282,31 +267,18 @@
     <script src="{{asset('js/util.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/myFunction.js')}}"></script>
-    <script type="text/javascript">
-        var idNum = 0, data = 'elastic'; 
-        $('table').on('keyup', 'textarea[data^="'+data+'"]', function()
-            { 
-                if($(this).attr('data')==''+data+'')
-                {
-                    $(this).attr({style:'overflow:hidden;'+$(this).attr('style')+'',data:''+$(this).attr('data')+''+idNum+''});
-                } 
-                var tData = $(this).attr('data'); 
-                if($('div[data="'+tData.replace(''+data+'','clone')+'"]').size()==0)
-                { 
-                    var attr = 'style="display:none;padding:'+$(this).css('padding')+';width:'+$(this).css('width')+';min-height:'+$(this).css('height')+';font-size:'+$(this).css('font-size')+';line-height:'+$(this).css('line-height')+';white-space:'+$(this).css('white-space')+';word-wrap:'+$(this).css('word-wrap')+';letter-spacing:0.2px;" data="'+tData.replace(''+data+'','clone')+'"'; 
-                    var clone = '<div '+attr+'>'+$(this).val()+'</div>'; 
-                    $('body').prepend(clone); 
-                    idNum++; 
-                }
-                else
-                { 
-                    $('div[data="'+tData.replace(''+data+'','clone')+'"]').html($(this).val()); 
-                    $(this).css('height',''+$('div[data="'+tData.replace(''+data+'','clone')+'"]').css('height')+''); 
-                } 
-            });
-    </script>
+    <script language="javascript">
     
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+            printDivCSS = new String ('<link href="{{ asset("css/app.css") }}" rel="stylesheet"><link rel="stylesheet" href="{{asset("css/main.css")}}" /><link rel="stylesheet" href="{{asset("css/admin.css")}}" />')
+            function CallPrint(divId) 
+            {
+                window.frames["print_frame"].document.body.innerHTML=printDivCSS + document.getElementById(divId).innerHTML;
+                window.frames["print_frame"].window.focus();
+                window.frames["print_frame"].window.print();
+            }
+        
+    </script>
+
 
   
     

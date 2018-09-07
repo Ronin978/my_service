@@ -14,7 +14,7 @@
 		<section id="pagePrint">	
 			
 
-		<table border="none">
+		<table class="table">
 			<tr>
 				<td>
 								<table>

@@ -18,6 +18,11 @@ class RepairController extends Controller
         return view('repair.create');
     }
 
+    public function createStore ()
+    {
+        return view('repair.createStore');
+    }
+
     public function edit (Request $request)
     {
     	$post = $request->all();
@@ -81,6 +86,18 @@ class RepairController extends Controller
         return redirect()->action('RepairController@show');
     }
 
+    public function store1(Request $request)
+    {
+        $post = $request->all();
+
+        $post['misze'] = Auth::user()->misze;
+        $post['users'] = Auth::user()->name;
+        Repair::create($post);
+
+        flash('Додано.');
+        return view('form.chek', ['objects'=>$post]);
+    }
+
     public function myShow(Request $request)
     {
         $find=$request->all()['find'];
@@ -117,6 +134,16 @@ class RepairController extends Controller
         $post = $request->all();
         $id=$post['mycheck'];
         $obj=Repair::find($id);
+        return view('form.chek', ['objects'=>$obj]);
+    }
+
+    public function check1(Request $request)
+    {
+        $post = $request->all();
+        $id=$post['mycheck'];
+        $obj=Repair::find($id);
+        $obj['status']='Виконано';
+        $obj->save();
         return view('form.chek', ['objects'=>$obj]);
     }
 }
