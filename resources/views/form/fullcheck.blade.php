@@ -11,7 +11,8 @@
 	<div class="12u">
 		<section align="center"><h2>Квитанція № {{$objects['no']}}</h2></section>
 
-		<section id="pagePrint">
+		<section id="pagePrint">	
+			
 
 		<table class="table">
 			<tr>
@@ -85,7 +86,7 @@
 						Термін виконання
 					</td>
 					<td width="110px">
-						&nbsp
+						
 					</td>
 				</tr>
 				<tr>
@@ -463,7 +464,6 @@
 	            </span>                  
 	        </div>	
 		</section>		
-
 	</div>
 </div>
 </div>

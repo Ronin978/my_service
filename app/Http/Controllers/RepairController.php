@@ -146,4 +146,17 @@ class RepairController extends Controller
         $obj->save();
         return view('form.chek', ['objects'=>$obj]);
     }
+
+    public function fullcheck($id)
+    {
+        $obj=Repair::find($id);
+        if (!empty($obj)) 
+        {
+            return view('form.fullcheck', ['objects'=>$obj]);
+        }
+        else
+        {
+            return view('form.fullcheck');
+        }        
+    }
 }

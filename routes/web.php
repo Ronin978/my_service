@@ -38,6 +38,7 @@ Route::post('/store', 'RepairController@store');
 Route::post('/delete/', 'RepairController@delete');
 Route::post('/check/', 'RepairController@check');
 Route::post('/check1/', 'RepairController@check1');
+Route::get('/check/{id}', 'SellingController@fullcheck');
 });
 
 Route::resource('/reports', 'ReportsController');

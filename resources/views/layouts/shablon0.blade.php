@@ -24,6 +24,21 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+
+    <script language="javascript">
+    
+            printDivCSS = new String ('<link href="{{ asset("css/app.css") }}" rel="stylesheet"><link rel="stylesheet" href="{{asset("css/main.css")}}" /><link rel="stylesheet" href="{{asset("css/admin.css")}}" />')
+            function CallPrint() 
+            {
+                var prtContent = document.getElementById("pagePrint");
+                var WinPrint = window.open('', '', 'left=0,top=0,width=930,height=907,toolbar=0,scrollbars=0,status=0');
+                WinPrint.document.write(printDivCSS + prtContent.innerHTML);
+                WinPrint.document.close();
+                WinPrint.focus();
+                WinPrint.print();
+            }
+        
+    </script>
     
 
     <script>
@@ -66,22 +81,20 @@
     <script language="javascript" type="text/javascript" >
             function sa(ea)
             {
-                for (var i = 1; i < 25; i++) {
+                for (var i = 1; i < 25; i++) 
+                {
                     if (i=ea) 
                     {
                         $("#rad+i").attr("checked", "checked");
                     }
-                    
                 }
-                
             }
             function sb(ev)
             {
                $("#myForm1").attr("action", ev);  //заменяем в форме атрибут action
                $("#myForm1").submit();  //отправляем форму
             }
-     </script>
-
+    </script>
 </head>
 
 <body>
@@ -216,7 +229,7 @@
  @yield('content')
                      
 <!-- Footer -->
-<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+
     <div id="footer-wrapper">
         <footer id="footer" class="container">
             <div class="row">
@@ -267,17 +280,7 @@
     <script src="{{asset('js/util.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/myFunction.js')}}"></script>
-    <script language="javascript">
     
-            printDivCSS = new String ('<link href="{{ asset("css/app.css") }}" rel="stylesheet"><link rel="stylesheet" href="{{asset("css/main.css")}}" /><link rel="stylesheet" href="{{asset("css/admin.css")}}" />')
-            function CallPrint(divId) 
-            {
-                window.frames["print_frame"].document.body.innerHTML=printDivCSS + document.getElementById(divId).innerHTML;
-                window.frames["print_frame"].window.focus();
-                window.frames["print_frame"].window.print();
-            }
-        
-    </script>
 
 
   
