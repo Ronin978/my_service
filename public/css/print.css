@@ -1,0 +1,57 @@
+table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#fulltable 
+{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+#logo
+{
+	width: 100px;
+	height: 50px;
+}
+
+#firstTable td
+{
+	border: 1px solid;
+}
+
+#twoTable td
+{
+	border: 1px solid;
+}
+
+#table3 td
+{
+	border: 1px solid;
+}
+
+#firstCol1
+{
+	width: 150px;
+}
+
+.firstCol2
+{
+	width: 25%;
+}
+
+.col60
+{
+	width: 480px;
+}
+.col40
+{
+	width: 400px;
+}
+.col5
+{
+	width: 20px;
+}

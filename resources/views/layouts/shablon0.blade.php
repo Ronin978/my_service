@@ -15,6 +15,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/main.css')}}" />
     <link rel="stylesheet" href="{{asset('css/admin.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/print.css')}}" />
 
     <!-- Scripts -->
     <script src="{{asset('js/app.js')}}"></script>
@@ -27,11 +28,11 @@
 
     <script language="javascript">
     
-            printDivCSS = new String ('<link href="{{ asset("css/app.css") }}" rel="stylesheet"><link rel="stylesheet" href="{{asset("css/main.css")}}" /><link rel="stylesheet" href="{{asset("css/admin.css")}}" />')
+            printDivCSS = new String ('<link href="{{ asset("css/print.css") }}" rel="stylesheet">')
             function CallPrint() 
             {
                 var prtContent = document.getElementById("pagePrint");
-                var WinPrint = window.open('', '', 'left=0,top=0,width=930,height=907,toolbar=0,scrollbars=0,status=0');
+                var WinPrint = window.open('', '', 'left=0,top=0,width=1000,height=600,toolbar=0,scrollbars=0,status=0');
                 WinPrint.document.write(printDivCSS + prtContent.innerHTML);
                 WinPrint.document.close();
                 WinPrint.focus();
@@ -255,7 +256,7 @@
 
                     <!-- Blurb -->
                         <section>
-                            <h2>Сайт знаходиться в тестовому режимі. Оновлено 07.09.2018р.</h2>
+                            <h2>Сайт знаходиться в тестовому режимі. Оновлено 14.09.2018р.</h2>
                             <p>
                                 Про всі помилки повідомляти розробника. Для ефективного усунення несправностей зробити скріншот та описати які дії призвели до несправності.
                             </p>
