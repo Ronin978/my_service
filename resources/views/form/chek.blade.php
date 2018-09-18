@@ -388,7 +388,7 @@
 								Комплектність
 							</td>
 							<td colspan="2">
-								&nbsp
+								&nbsp{{$objects['compl']}}
 							</td>
 						</tr>
 						<tr>
@@ -406,7 +406,7 @@
 						</tr>
 						<tr>
 							<td colspan="3">
-								&nbsp
+								&nbsp{{$objects['nespr']}}
 							</td>
 						</tr>
 						<tr>	
