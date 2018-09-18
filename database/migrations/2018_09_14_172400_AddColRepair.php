@@ -13,7 +13,11 @@ class AddColRepair extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('repair', function ($table) {
+            $table->string('compl')->after('model')->nullable();
+            $table->string('nespr')->after('date')->nullable();
+            $table->string('termin')->after('date')->nullable();
+        });
     }
 
     /**
@@ -23,6 +27,9 @@ class AddColRepair extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('repair', function($table)
+        {
+          $table->dropColumn('viddil');
+        });
     }
 }
