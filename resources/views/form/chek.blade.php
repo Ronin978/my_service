@@ -71,7 +71,7 @@
 								Комплектність
 							</td>
 							<td colspan="3">
-								&nbsp
+								&nbsp{{$objects['compl']}}
 							</td>
 						</tr>
 						<tr>
@@ -85,7 +85,7 @@
 								Термін виконання
 							</td>
 							<td width="110px">
-								&nbsp
+								&nbsp{{$objects['termin']}}
 							</td>
 						</tr>
 						<tr>
@@ -95,7 +95,7 @@
 						</tr>
 						<tr>
 							<td colspan="4">
-								&nbsp
+								&nbsp{{$objects['nespr']}}
 							</td>
 						</tr>
 						<tr>

@@ -50,6 +50,9 @@
 	                <td class="col_3 hidden-print"></td>
 	                <td class="col_3">№<br>п/п</td>
 	                <td class="col_15">Дата</td>
+	                <td class="col_15">Комплектація</td>
+	                <td class="col_15">Несправність</td>
+	                <td class="col_15">Термін</td>
 	                <td class="col_8">Тип пристрою</td>
 	                <td class="col_8">Статус</td>
 	                <td class="col_8">№</td>
@@ -76,7 +79,16 @@
 		                    {{$obj->date}}
 		                </td>
 		                <td>
-		                    {{$obj->type}}
+		                    {{$obj->compl}}
+		                </td>
+		                <td>
+		                    {{$obj->nespr}}
+		                </td>
+		                <td>
+		                    {{$obj->date}}
+		                </td>
+		                <td>
+		                    {{$obj->termin}}
 		                </td>
 		                <td>
 		                    {{$obj->status}}

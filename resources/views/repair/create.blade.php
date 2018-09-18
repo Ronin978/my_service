@@ -15,6 +15,9 @@
             <tr id="firstTr">
                 <td class="col_3">№<br>п/п</td>
                 <td class="col_15">Дата</td>
+                <td class="col_15">Комплектація</td>
+                <td class="col_15">Несправність</td>
+                <td class="col_15">Термін</td>
                 <td class="col_8">Тип пристрою</td>
                 <td class="col_8">Статус</td>
                 <td class="col_8">№</td>
@@ -32,6 +35,15 @@
                 </td>
                 <td>
                     <textarea name="date0" rows="1" data="elastic"></textarea>
+                </td>
+                <td>
+                    <textarea name="compl0" rows="1" data="elastic"></textarea>
+                </td>
+                <td>
+                    <textarea name="nespr0" rows="1" data="elastic"></textarea>
+                </td>
+                <td>
+                    <textarea name="termin0" rows="1" data="elastic"></textarea>
                 </td>
                 <td>
                     <textarea name="type0" rows="1" data="elastic"></textarea>

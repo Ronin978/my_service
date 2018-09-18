@@ -29,7 +29,9 @@ class AddColRepair extends Migration
     {
         Schema::table('repair', function($table)
         {
-          $table->dropColumn('viddil');
+          $table->dropColumn('compl');
+          $table->dropColumn('nespr');
+          $table->dropColumn('termin');
         });
     }
 }

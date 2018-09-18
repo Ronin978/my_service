@@ -49,11 +49,14 @@ class RepairController extends Controller
         $report['users'] = Auth::user()->name;
 
 
-        for ($i=0; $i < (count($post)-1)/11 ; $i++) 
+        for ($i=0; $i < (count($post)-1)/14 ; $i++) 
         {   
             $flash=$flash.$post["date$i"];
 
             $report['date'] = $post["date$i"];  
+            $report['termin'] = $post["termin$i"];  
+            $report['nespr'] = $post["nespr$i"];  
+            $report['compl'] = $post["compl$i"];  
             $report['type'] = $post["type$i"];  
             $report['status'] = $post["status$i"];  
             $report['no'] = $post["no$i"];
