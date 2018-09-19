@@ -91,8 +91,8 @@ function AddLine1()
     text1.innerHTML= index+1;
     cell1.appendChild(text1);
 
-    var arr = ["date", "termin", "nespr", "type", "status", "no", 
-    "pib", "tel", "adress", "model", "compl", "prod", "maister", "other"];
+    var arr = ["date", "compl", "nespr", "termin", "type", "status", "no", 
+    "pib", "tel", "adress", "model", "prod", "maister", "other"];
 
     for (var i = 0; i <= arr.length - 1;  i++) {
         var cell = row.insertCell(i+1);

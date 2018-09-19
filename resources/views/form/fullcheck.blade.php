@@ -12,12 +12,11 @@
 		<section align="center"><h2>Квитанція № {{$objects['no']}}</h2></section>
 
 		<section id="pagePrint">	
-			
 
 		<table class="table">
 			<tr>
 				<td>
-								<table>
+				<table>
 				<tr>
 					<td colspan="3">
 						<b>СЦ "НІКОЛА"</b><br>
@@ -111,6 +110,7 @@
 				</tr>
 			</table>
 				<h4 align="center">Технологічна картка ремонту</h4>
+		<form id="firstForm" method="GET" action="{{action('RepairController@fullcheck', ['id'=>$objects['id']])}}">
 			<table>
 				<tr>
 					<td width="250px">
@@ -323,6 +323,7 @@
 					</td>
 				</tr>
 			</table>
+		</form>
 Прилад отриманий у повній комплектації в присутності замовника. Претензій до ремонту не маю.
 <br>
 <br>
@@ -450,12 +451,11 @@
 <br>
 		</section>
 		<section align="center"> 
-			<div class="btn-group" onClick="CallPrint('pagePrint');">   
-	            <span>
-	                <img src="{{asset('css/ico/print.png')}}">
-	                Роздрукувати
-	            </span>
-	        </div>
+			<div class="btn-group" onclick="document.getElementById('firstForm').submit();">
+                <span>
+                    <img src="{{asset('css/ico/save.png')}}">Зберегти
+                </span>
+            </div>
 	        
 		    <div class="btn-group" onclick="window.history.go(-1); return false;">
 	            <span>

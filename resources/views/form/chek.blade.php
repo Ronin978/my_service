@@ -18,7 +18,7 @@
 				<td class="col60">
 					<table id="firstTable">
 						<tr>
-							<td colspan="3">
+							<td colspan="3" class="centerText">
 								<b>СЦ "НІКОЛА"</b><br>
 								м.Луцьк, вул.Ковельська, 13, тел. 050-027-02-30
 							</td>
@@ -89,7 +89,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="4">
+							<td colspan="4" class="centerText">
 								<b>Несправність зі слів замовника</b>
 							</td>
 						</tr>
@@ -99,7 +99,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="4">
+							<td colspan="4"  class="centerText">
 								<b>Примітки</b>
 							</td>
 						</tr>
@@ -110,7 +110,7 @@
 						</tr>
 					</table>
 					<h4 align="center">Технологічна картка ремонту</h4>
-					<table id="twoTable">
+					<table id="twoTable"  class="centerText">
 						<tr>
 							<td width="250px">
 								Послуга
@@ -335,7 +335,7 @@
 				<td class="col40">
 					<table id="table3">
 						<tr>
-							<td colspan="2">
+							<td colspan="2"  class="centerText">
 								<b>СЦ "НІКОЛА"</b><br>
 								м.Луцьк, вул.Ковельська, 13, тел. 050-027-02-30
 							</td>
@@ -400,8 +400,8 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="3">
-								Причини звернення
+							<td colspan="3" class="centerText">
+								<b>Причини звернення</b>
 							</td>
 						</tr>
 						<tr>
@@ -410,8 +410,8 @@
 							</td>
 						</tr>
 						<tr>	
-							<td colspan="3">
-								Примітки
+							<td colspan="3" class="centerText">
+								<b>Примітки</b>
 							</td>
 						</tr>
 						<tr>
@@ -421,7 +421,7 @@
 						</tr>
 						<tr>
 							<td colspan="3" width="500px">
-			                   <b>До уваги замовника! Правила  ремонту</b><br>                                                              
+			                   <div class="centerText"><b>До уваги замовника! Правила  ремонту</b></div>                                                            
 			                   <div align="left">
 			                   1.Всі витрати, пов'язані з ремонтом, за рахунок замовника.  <br>                                                         
 			                   2.Після повідомлення замовника про виконання ремонту замовник повинен забрати свій прилад протягом трьох робочих днів. Через три доби зберігання буде коштувати 5 грн. за добу.   <br>

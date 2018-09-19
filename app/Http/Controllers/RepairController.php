@@ -162,4 +162,16 @@ class RepairController extends Controller
             return view('form.fullcheck');
         }        
     }
+
+    public function fullcheckStore(Request $request)
+    {
+        $post = $request->all();
+
+        $post['misze'] = Auth::user()->misze;
+        $post['users'] = Auth::user()->name;
+        Repair::create($post);
+
+        flash('Додано.');
+        return view('form.chek', ['objects'=>$post]);
+    }
 }
