@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repair;
+use App\Posl;
 use Illuminate\Support\Facades\Auth;
 
 class RepairController extends Controller
@@ -43,31 +44,22 @@ class RepairController extends Controller
     public function store(Request $request)
     {
         $post = $request->all();
-        $flash=' ';
+        
+        $post['misze'] = Auth::user()->misze;
+        $post['users'] = Auth::user()->name;
 
-        $report['misze'] = Auth::user()->misze;
+        $protected = Repair::create($post);//create Repair
+
+        $report['myid'] = $protected->id;
         $report['users'] = Auth::user()->name;
 
-
-        for ($i=0; $i < (count($post)-1)/14 ; $i++) 
+        for ($i=0; $i < 5 ; $i++) 
         {   
-            $flash=$flash.$post["date$i"];
-
-            $report['date'] = $post["date$i"];  
-            $report['termin'] = $post["termin$i"];  
-            $report['nespr'] = $post["nespr$i"];  
-            $report['compl'] = $post["compl$i"];  
-            $report['type'] = $post["type$i"];  
-            $report['status'] = $post["status$i"];  
-            $report['no'] = $post["no$i"];
-            $report['pib'] = $post["pib$i"];
-            $report['tel'] = $post["tel$i"];
-            $report['adress'] = $post["adress$i"];
-            $report['model'] = $post["model$i"];
-            $report['prod'] = $post["prod$i"];
-            $report['maister'] = $post["maister$i"];
-            $report['other'] = $post["other$i"];
-
+            $report['posl'] = $post["posl$i"];  
+            $report['kst'] = $post["kst$i"];  
+            $report['vart'] = $post["vart$i"];  
+            $report['gar'] = $post["gar$i"];  
+             
             $limit=0;
             foreach ($report as $rep) 
             {
@@ -81,10 +73,33 @@ class RepairController extends Controller
                     if ($rep == '')
                         { $report[$key] = ' '; }
                 }
-                Repair::create($report);
+                Posl::create($report);
             }
         }
 
+        for ($i=0; $i < 6 ; $i++) 
+        {   
+            $report1['posl'] = $post["Dposl$i"];  
+            $report1['kst'] = $post["Dkst$i"];  
+            $report1['vart'] = $post["Dvart$i"];  
+            $report1['gar'] = $post["Dgar$i"];  
+             
+            $limit=0;
+            foreach ($report1 as $rep) 
+            {
+                if ($rep == '') 
+                    { $limit++; }
+            }
+            if ($limit < (count($report1)-1))
+            {
+                foreach ($report1 as $key => $rep)
+                {
+                    if ($rep == '')
+                        { $report1[$key] = ' '; }
+                }
+                Posl::create($report1);
+            }
+        }
         flash('Додано.'.$flash);
         return redirect()->action('RepairController@show');
     }
