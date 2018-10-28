@@ -29,31 +29,37 @@ class RepairController extends Controller
     	$post = $request->all();
         $id=$post['mycheck'];
         $obj=Repair::where('id', $id)->get();
-    	return view('repair.edit', ['objects'=>$obj, 'myid'=>$id]);
+        $posl=Posl::where('myid', $id)->where('type','posluga')->get();
+     
+        $detal=Posl::where('myid', $id)->where('type', 'detal')->get();
+    	return view('repair.edit', ['objects'=>$obj, 'posl'=>$posl, 'detal'=>$detal, 'myid'=>$id]);
     }
 
     public function update(Request $request, $id)
     {
         $sell=Repair::find($id);
-        $sell->update($request->all());
-        $sell->save();
-        flash('Зміни збережено.');
-        return $this->show();
-    }
-
-    public function store(Request $request)
-    {
         $post = $request->all();
         
         $post['misze'] = Auth::user()->misze;
         $post['users'] = Auth::user()->name;
-
-        $protected = Repair::create($post);//create Repair
-
-        $report['myid'] = $protected->id;
+        
+        $sell->update($post);
+        $sell->save();//update Repair
+        $report['myid'] = $id;
         $report['users'] = Auth::user()->name;
+        $report['type'] = 'posluga';
 
-        for ($i=0; $i < 5 ; $i++) 
+        $report1['myid'] = $report['myid'];
+        $report1['users'] = $report['users'];
+        $report1['type'] = 'detal'; 
+
+        $variablesLine = Posl::where('myid', $id)->where('type','posluga')->get();
+        foreach ($variablesLine as $value) 
+        {
+            Posl::find($value->id)->delete();//видаляємо всі послуги
+        }       
+
+        for ($i=0; $i < 6 ; $i++) 
         {   
             $report['posl'] = $post["posl$i"];  
             $report['kst'] = $post["kst$i"];  
@@ -66,7 +72,81 @@ class RepairController extends Controller
                 if ($rep == '') 
                     { $limit++; }
             }
-            if ($limit < (count($report)-1))
+
+            if ($limit < (count($report)-4))
+            {
+                foreach ($report as $key => $rep)
+                {
+                    if ($rep == '')
+                        { $report[$key] = ' '; }
+                }
+                Posl::create($report); //додаємо нові записи та пререзаписи старих
+            }
+        }
+
+        $variablesLine1 = Posl::where('myid', $id)->where('type','detal')->get();
+        foreach ($variablesLine1 as $value) 
+        {
+            Posl::find($value->id)->delete();//видаляємо всі деталі
+        }       
+
+        for ($j=0; $j < 7 ; $j++) 
+        {   
+            $report1['posl'] = $post["Dposl$j"];  
+            $report1['kst'] = $post["Dkst$j"];  
+            $report1['vart'] = $post["Dvart$j"];  
+            $report1['gar'] = $post["Dgar$j"];  
+             
+            $limit=0;
+            foreach ($report1 as $rep) 
+            {
+                if ($rep == '') 
+                    { $limit++; }
+            }
+            if ($limit < (count($report1)-4))
+            {
+                foreach ($report1 as $key1 => $rep)
+                {
+                    if ($rep == '')
+                        { $report1[$key1] = ' '; }
+                }
+                Posl::create($report1);
+            }
+        }
+        flash('Додано.');
+        return redirect()->action('RepairController@show');
+    }
+
+    public function store(Request $request)
+    {
+        $post = $request->all();
+        
+        $post['misze'] = Auth::user()->misze;
+        $post['users'] = Auth::user()->name;
+        
+        $protected = Repair::create($post);//create Repair
+        $report['myid'] = $protected->id;
+        $report['users'] = Auth::user()->name;
+        $report['type'] = 'posluga';
+
+        $report1['myid'] = $report['myid'];
+        $report1['users'] = $report['users'];
+        $report1['type'] = 'detal';        
+
+        for ($i=0; $i < 6 ; $i++) 
+        {   
+            $report['posl'] = $post["posl$i"];  
+            $report['kst'] = $post["kst$i"];  
+            $report['vart'] = $post["vart$i"];  
+            $report['gar'] = $post["gar$i"];  
+             
+            $limit=0;
+            foreach ($report as $rep) 
+            {
+                if ($rep == '') 
+                    { $limit++; }
+            }
+            if ($limit < (count($report)-4))
             {
                 foreach ($report as $key => $rep)
                 {
@@ -77,7 +157,7 @@ class RepairController extends Controller
             }
         }
 
-        for ($i=0; $i < 6 ; $i++) 
+        for ($i=0; $i < 7 ; $i++) 
         {   
             $report1['posl'] = $post["Dposl$i"];  
             $report1['kst'] = $post["Dkst$i"];  
@@ -90,7 +170,7 @@ class RepairController extends Controller
                 if ($rep == '') 
                     { $limit++; }
             }
-            if ($limit < (count($report1)-1))
+            if ($limit < (count($report1)-4))
             {
                 foreach ($report1 as $key => $rep)
                 {
@@ -100,7 +180,7 @@ class RepairController extends Controller
                 Posl::create($report1);
             }
         }
-        flash('Додано.'.$flash);
+        flash('Додано.');
         return redirect()->action('RepairController@show');
     }
 

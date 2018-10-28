@@ -29,8 +29,7 @@
                                 Номер квитанції
                             </td>
                             <td colspan="3">
-                                <textarea name="no" rows="1" data="elastic">
-                                </textarea> 
+                                <textarea name="no" rows="1" data="elastic"></textarea> 
                             </td>                   
                         </tr>
                         <tr>
@@ -38,8 +37,7 @@
                                 ПІБ замовника
                             </td>
                             <td colspan="3">
-                                <textarea name="pib" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="pib" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -47,8 +45,7 @@
                                 Адреса
                             </td>
                             <td colspan="3">
-                                <textarea name="adress" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="adress" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -56,8 +53,7 @@
                                 Контактний телефон
                             </td>
                             <td colspan="3">
-                                <textarea name="tel" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="tel" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -65,8 +61,39 @@
                                 Прилад
                             </td>
                             <td colspan="3">
-                                <textarea name="model" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="model" rows="1" data="elastic"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Тип
+                            </td>
+                            <td colspan="3">
+                                <textarea name="type" rows="1" data="elastic"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Статус
+                            </td>
+                            <td colspan="3">
+                                <textarea name="status" rows="1" data="elastic"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Виробник
+                            </td>
+                            <td colspan="3">
+                                <textarea name="prod" rows="1" data="elastic"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Майстер
+                            </td>
+                            <td colspan="3">
+                                <textarea name="maister" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -74,8 +101,7 @@
                                 Комплектність
                             </td>
                             <td colspan="3">
-                                <textarea name="compl" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="compl" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -83,15 +109,13 @@
                                 Дата прийняття
                             </td>
                             <td width="110px">
-                                <textarea name="date" rows="1" data="elastic">
-                            </textarea>
+                                <textarea name="date" rows="1" data="elastic"></textarea>
                             </td>
                             <td>
                                 Термін виконання
                             </td>
                             <td width="110px">
-                                <textarea name="termin" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="termin" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -101,8 +125,7 @@
                         </tr>
                         <tr>
                             <td colspan="4">
-                                <textarea name="nespr" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="nespr" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -112,8 +135,7 @@
                         </tr>
                         <tr>
                             <td colspan="4">
-                                <textarea name="oyher" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="other" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
                     </table>
@@ -133,114 +155,23 @@
                                 Термін гарантії
                             </td>
                         </tr>
+                        @for ($i = 0; $i < 6; $i++)
                         <tr>
                             <td>
-                                <textarea name="posl0" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="posl{{$i}}" rows="1" data="elastic"></textarea>
                             </td>
                             <td>
-                                <textarea name="kst0" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="kst{{$i}}" rows="1" data="elastic"></textarea>
                             </td>
                             <td>
-                                <textarea name="vart0" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="vart{{$i}}" rows="1" data="elastic"></textarea>
                             </td>
                             <td>
-                                <textarea name="gar0" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="gar{{$i}}" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <textarea name="posl1" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="kst1" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="vart1" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="gar1" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea name="posl2" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="kst2" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="vart2" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="gar2" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                               <textarea name="posl3" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="kst3" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="vart3" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="gar3" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea name="posl4" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="kst4" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="vart4" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="gar4" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea name="posl5" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="kst5" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="vart5" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="gar5" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
+                        @endfor
+                        
                         <tr>
                             <td>
                                 Деталь
@@ -255,139 +186,26 @@
                                 Термін гарантії
                             </td>
                         </tr>
+                        @for ($i = 0; $i < 7; $i++)
                         <tr>
                             <td>
-                                <textarea name="Dposl0" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="Dposl{{$i}}" rows="1" data="elastic"></textarea>
                             </td>
                             <td>
-                                <textarea name="Dkst0" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="Dkst{{$i}}" rows="1" data="elastic"></textarea>
                             </td>
                             <td>
-                                <textarea name="Dvart0" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="Dvart{{$i}}" rows="1" data="elastic"></textarea>
                             </td>
                             <td>
-                                <textarea name="Dgar0" rows="1" data="elastic">
-                                </textarea>
+                                <textarea name="Dgar{{$i}}" rows="1" data="elastic"></textarea>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <textarea name="Dposl1" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dkst1" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dvart1" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dgar1" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea name="Dposl2" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dkst2" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dvart2" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dgar2" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea name="Dposl3" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dkst3" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dvart3" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dgar3" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea name="Dposl4" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dkst4" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dvart4" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dgar4" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea name="Dposl5" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dkst5" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dvart5" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dgar5" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea name="Dposl6" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dkst6" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dvart6" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                            <td>
-                                <textarea name="Dgar6" rows="1" data="elastic">
-                                </textarea>
-                            </td>
-                        </tr>
+                        @endfor
+                        
+                       
                     </table>
-                    Прилад отриманий у повній комплектації в присутності замовника. Претензій до ремонту не маю.
-                    <br>
-                    <br>
-                    <br>
-                    Підпис замовника _____________
-                    Підпис представника СЦ _____________
+                    
                 </td>
                 <td class="col5">
                     &nbsp

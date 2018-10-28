@@ -456,9 +456,9 @@
 	            </span>
 	        </div>
 	        
-		    <div class="btn-group" onclick="window.history.go(-1); return false;">
-	            <span>
-	                Назад
+		    <div class="btn-group" onclick="window.location='{{action('RepairController@show')}}'">
+		        <span>
+		            Завершити
 	                <img src="{{asset('css/ico/back.png')}}">   
 	            </span>                  
 	        </div>	
